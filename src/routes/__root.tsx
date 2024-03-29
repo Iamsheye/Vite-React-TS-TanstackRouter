@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { createRootRoute, Outlet, ScrollRestoration } from "@tanstack/react-router";
 
 const TanStackRouterDevtools =
   process.env.NODE_ENV === "production"
@@ -16,6 +16,7 @@ const TanStackRouterDevtools =
 export const Route = createRootRoute({
   component: () => (
     <>
+      <ScrollRestoration />
       <Outlet />
       <Suspense>
         <TanStackRouterDevtools />
